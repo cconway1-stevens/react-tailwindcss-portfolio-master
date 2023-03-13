@@ -58,9 +58,12 @@ export default function Contact() {
                 cconway1@stevens.edu
               </a>
               <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                PHONE
+                LINKEDIN
               </h2>
-              <p className="leading-relaxed">123-456-7890</p>
+              <p className="leading-relaxed">
+                <a href="https://www.linkedin.com/in/cameron-conway-07270819b/" target="_blank" rel="noopener noreferrer">Come Visit My LinkIn</a>
+              </p>
+
             </div>
           </div>
         </div>
