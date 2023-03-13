@@ -50,11 +50,19 @@ export const testimonials = [
   },
 ];
 
+// export const skills = [
+//   "JavaScript",
+//   "React",
+//   "Next.js",
+//   "Node",
+//   "GraphQL",
+//   "Material UI",
+// ];
 export const skills = [
-  "JavaScript",
-  "React",
-  "Next.js",
-  "Node",
-  "GraphQL",
-  "Material UI",
+  "Software development: SolidWorks, Arduino, AutoCAD, Microsoft Office: Word, PowerPoint, Excel, Visio, LabVIEW, C#, C++, Java, MATLAB, Python, HTML, React",
+  "Project management: Liaising with clients, requirements gathering, budgeting, incident reporting, maintenance requests, room transfers, facilitating interviews",
+  "UI/UX design: Creating Figma models, conducting consumer interviews, presenting designs to clients",
+  "Research: Conducting experiments, recording and processing experimental data, calibrating and operating lab instrumentation",
+  "Teaching and mentoring: Developing materials, providing feedback, assisting professors during guest lectures",
+  "Interpersonal skills: Building and fostering relationships, counseling, diversity and inclusion program development"
 ];
