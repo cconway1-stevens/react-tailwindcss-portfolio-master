@@ -37,7 +37,8 @@ export default function Contact() {
             marginHeight={0}
             marginWidth={0}
             style={{ filter: "opacity(0.7)" }}
-            src="https://www.google.com/maps/embed/v1/place?q=97+warren+st+new+york+city&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24182.2973080306!2d-74.04646011827971!3d40.74470857700098!2m3!1f0!2f0!3f0!
+            3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c257608d1533d1%3A0x44b6ca6a1137bf87!2sHoboken%2C%20NJ!5e0!3m2!1sen!2sus!4v1678748598290!5m2!1sen!2sus"
           />
           <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
@@ -45,8 +46,8 @@ export default function Contact() {
                 ADDRESS
               </h2>
               <p className="mt-1">
-                97 Warren St. <br />
-                New York, NY 10007
+                01 Castle Point Terr. <br />
+                Hoboken, NJ 07030
               </p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -54,7 +55,7 @@ export default function Contact() {
                 EMAIL
               </h2>
               <a className="text-indigo-400 leading-relaxed">
-                reedbarger@email.com
+                cconway1@stevens.edu
               </a>
               <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
                 PHONE
@@ -69,11 +70,10 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
-            Hire Me
+            What are you waiting for?
           </h2>
           <p className="leading-relaxed mb-5">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
-            suscipit officia aspernatur veritatis. Asperiores, aliquid?
+            If your looking for a sign this is it 🤙. Lets connect and start designing better futures !!!
           </p>
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-400">

@@ -58,6 +58,7 @@ export const testimonials = [
 //   "GraphQL",
 //   "Material UI",
 // ];
+
 export const skills = [
   "Software development: SolidWorks, Arduino, AutoCAD, Microsoft Office: Word, PowerPoint, Excel, Visio, LabVIEW, C#, C++, Java, MATLAB, Python, HTML, React",
   "Project management: Liaising with clients, requirements gathering, budgeting, incident reporting, maintenance requests, room transfers, facilitating interviews",
