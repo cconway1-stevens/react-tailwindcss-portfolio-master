@@ -1,3 +1,45 @@
+# Cameron Conway's Professional Portfolio
+
+Welcome to my professional portfolio! My name is Cameron Conway, and I am a software engineer with experience in project management, UI/UX design, and software development. This portfolio showcases some of my recent projects and provides an overview of my skills and experience.
+
+## Projects
+
+Here are some of the projects I've worked on recently:
+
+- [Project Name](https://github.com/username/project-name): Short description of project.
+- [Project Name](https://github.com/username/project-name): Short description of project.
+- [Project Name](https://github.com/username/project-name): Short description of project.
+
+## Skills
+
+Here are some of the skills and technologies I'm proficient in:
+
+- JavaScript
+- React
+- Next.js
+- Node.js
+- GraphQL
+- Material UI
+- C#
+- C++
+- Java
+- MATLAB
+- Python
+- HTML/CSS
+
+## About Me
+
+I am a software engineer with experience in both industry and academic settings. I am passionate about leveraging technology to solve complex problems and drive innovation, and I thrive in collaborative environments where I can work closely with clients and development teams to deliver exceptional results.
+
+## Contact
+
+If you have any questions or would like to discuss a potential project, please don't hesitate to reach out to me at cconway1@stevens.edu. You can also find me on [LinkedIn](https://www.linkedin.com/in/cameronjconway/) and [GitHub](https://github.com/cjconway8).
+
+Thank you for taking the time to visit my portfolio!
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
