@@ -43,7 +43,7 @@ I am a software engineer with experience in both industry and academic settings.
 
 ## Contact
 
-If you have any questions or would like to discuss a potential project, please don't hesitate to reach out to me at cconway1@stevens.edu. You can also find me on [LinkedIn](https://www.linkedin.com/in/cameronjconway/) and [GitHub](https://github.com/cjconway8).
+If you have any questions or would like to discuss a potential project, please don't hesitate to reach out to me at cconway1@stevens.edu. You can also find me on [LinkedIn](https://www.linkedin.com/in/cameron-conway-07270819b/) and [GitHub](https://github.com/cconway1-stevens/my-portfolio).
 
 Thank you for taking the time to visit my portfolio!
 
