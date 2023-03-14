@@ -7,6 +7,12 @@ https://github.com/cconway1-stevens/my-portfolio  ,
 https://verdant-toffee-de3197.netlify.app/#about  ,
 https://app.netlify.com/sites/verdant-toffee-de3197/overview
 
+# Netlift Status 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/991d205e-7b58-4ded-93e5-20a0170ad3b4/deploy-status)](https://app.netlify.com/sites/verdant-toffee-de3197/deploys)
+
+https://verdant-toffee-de3197.netlify.app/#about 
+
+
 ## CircleCI Test 
 Build Test:       
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/cconway1-stevens/my-portfolio/tree/first-life.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cconway1-stevens/my-portfolio/tree/first-life)
