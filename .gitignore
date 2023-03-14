@@ -4,6 +4,7 @@
 /node_modules
 /server/node_modules
 /server/myExpressapp/node_modules
+/server/myExpressapp/.env
 /.pnp
 .pnp.js
 
