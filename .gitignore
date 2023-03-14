@@ -3,8 +3,7 @@
 # dependencies
 /node_modules
 /server/node_modules
-/server/myExpressapp/node_modules
-/server/myExpressapp/.env
+/server/.env
 /.pnp
 .pnp.js
 
