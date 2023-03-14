@@ -61,7 +61,7 @@ export default function Contact() {
                 LINKEDIN
               </h2>
               <p className="leading-relaxed">
-                <a href="https://www.linkedin.com/in/cameron-conway-07270819b/" target="_blank" rel="noopener noreferrer">Come Visit My LinkIn</a>
+                <a href="https://www.linkedin.com/in/cameron-conway-07270819b/" target="_blank" rel="noopener noreferrer">Come Visit My LinkedIn</a>
               </p>
 
             </div>
