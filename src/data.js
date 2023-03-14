@@ -1,36 +1,29 @@
 export const projects = [
+  // {
+  //   title: "This Site",
+  //   subtitle: "React",
+  //   description:
+  //     "This site was built using React and Tailwind CSS. It is hosted on Netlify.",
+  //   image: "project-1.gif",
+  //   link: "https://github.com/cconway1-stevens/my-portfolio"
+  // },
   {
-    title: "React Reserve",
-    subtitle: "MERN Stack",
+    title: "this.Site",
+    subtitle: "React",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./project-1.gif",
-    link: "https://reactbootcamp.com",
+      "This site was built using React and Tailwind CSS. It is hosted on Netlify.",
+    image: "this-site.svg",
+    link: "https://github.com/cconway1-stevens/my-portfolio"
   },
   {
-    title: "React Tracks",
-    subtitle: "React and Python",
+    title: "ChoreNScore",
+    subtitle: "React",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./project-2.gif",
-    link: "https://reactbootcamp.com",
-  },
-  {
-    title: "DevChat",
-    subtitle: "React and Firebase",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./project-3.gif",
-    link: "https://reactbootcamp.com",
-  },
-  {
-    title: "Epic Todo App",
-    subtitle: "React Hooks",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./project-4.gif",
-    link: "https://reactbootcamp.com",
-  },
+    "This site was built using React and firebase as a backend.",
+    //"ChoreNScore is a web application that allows users to create and manage chores for their household. Users can create chores, assign them to other users, and track the completion of chores. Users can also view their own chore history and the chore history of other users. This application was created using React, Node.js, Express, and MongoDB.",
+    image: "ChoreNScore.svg",
+    link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+  }
 ];
 
 export const testimonials = [

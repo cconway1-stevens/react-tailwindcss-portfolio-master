@@ -12,7 +12,7 @@ export default function App() {
     <main className="text-gray-400 bg-gray-900 body-font">
       <Navbar />
       <About />
-      {/* <Projects /> */}
+      <Projects />
       <Skills />
       {/*<Testimonials />*/}
       <Contact />
