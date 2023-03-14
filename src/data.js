@@ -67,3 +67,13 @@ export const skills = [
   "Teaching and Mentoring: Developing materials, providing feedback, assisting professors during guest lectures",
   "Interpersonal Skills: Building and fostering relationships, counseling, diversity and inclusion program development"
 ];
+export const documents = [
+  {
+    title: "Resume",
+    subtitle: "PDF",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+    image: "./resume.jpg",
+    link: "./resume.jpg",
+  }
+];
