@@ -1,0 +1,32 @@
+# Specify the version of CircleCI to use
+version: 2.1
+
+# Define the job that will run on CircleCI
+jobs:
+  build:
+    # Use the latest available Ubuntu 20.04 image as the primary container for the job
+    docker:
+      - image: circleci/node:14.17.6-buster
+
+    # Define the steps to run in the job
+    steps:
+      # Checkout the code from the Git repository
+      - checkout
+
+      # Install project dependencies using npm
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      # Run the test suite
+      - run:
+          name: Run tests
+          command: npm test
+
+# Define the workflows that will use the job
+workflows:
+  version: 2
+  build-and-test:
+    # Define the jobs to run in the workflow
+    jobs:
+      - build
