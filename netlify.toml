@@ -5,3 +5,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+  # optional, deploy the lighthouse report to a path under your site
+  [plugins.inputs.audits]
+    output_path = "reports/lighthouse.html"
