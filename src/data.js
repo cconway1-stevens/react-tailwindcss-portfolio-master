@@ -52,14 +52,87 @@ export const testimonials = [
 //   "Material UI",
 // ];
 
+// export const skills = [
+//   "Software development: SolidWorks, Arduino, AutoCAD, Microsoft Office: Word, PowerPoint, Excel, Visio, LabVIEW, C#, C++, Java, MATLAB, Python, HTML, React",
+//   "Project Management: Liaising with clients, requirements gathering, budgeting, incident reporting, maintenance requests, room transfers, facilitating interviews",
+//   "UI/UX Design: Creating Figma models, conducting consumer interviews, presenting designs to clients",
+//   "Research: Conducting experiments, recording and processing experimental data, calibrating and operating lab instrumentation",
+//   "Teaching and Mentoring: Developing materials, providing feedback, assisting professors during guest lectures",
+//   "Interpersonal Skills: Building and fostering relationships, counseling, diversity and inclusion program development"
+// ];
+
 export const skills = [
-  "Software development: SolidWorks, Arduino, AutoCAD, Microsoft Office: Word, PowerPoint, Excel, Visio, LabVIEW, C#, C++, Java, MATLAB, Python, HTML, React",
-  "Project Management: Liaising with clients, requirements gathering, budgeting, incident reporting, maintenance requests, room transfers, facilitating interviews",
-  "UI/UX Design: Creating Figma models, conducting consumer interviews, presenting designs to clients",
-  "Research: Conducting experiments, recording and processing experimental data, calibrating and operating lab instrumentation",
-  "Teaching and Mentoring: Developing materials, providing feedback, assisting professors during guest lectures",
-  "Interpersonal Skills: Building and fostering relationships, counseling, diversity and inclusion program development"
+  {
+    name: "Front-end Development",
+    tags: ["HTML", "CSS", "JavaScript", "React", "Vue", "Angular"],
+  },
+  {
+    name: "Back-end Development",
+    tags: ["Node.js", "Python", "Ruby on Rails", "PHP"],
+  },
+  {
+    name: "Software development",
+    tags: [
+      "SolidWorks",
+      "Arduino",
+      "AutoCAD",
+      "Microsoft Office: Word, PowerPoint, Excel, Visio",
+      "LabVIEW",
+      "C#",
+      "C++",
+      "Java",
+      "MATLAB",
+      "Python",
+      "HTML",
+      "React",
+    ],
+  },
+  {
+    name: "Project Management",
+    tags: [
+      "Liaising with clients",
+      "Requirements gathering",
+      "Budgeting",
+      "Incident reporting",
+      "Maintenance requests",
+      "Room transfers",
+      "Facilitating interviews",
+    ],
+  },
+  {
+    name: "UI/UX Design",
+    tags: [
+      "Creating Figma models",
+      "Conducting consumer interviews",
+      "Presenting designs to clients",
+    ],
+  },
+  {
+    name: "Research",
+    tags: [
+      "Conducting experiments",
+      "Recording and processing experimental data",
+      "Calibrating and operating lab instrumentation",
+    ],
+  },
+  {
+    name: "Teaching and Mentoring",
+    tags: [
+      "Developing materials",
+      "Providing feedback",
+      "Assisting professors during guest lectures",
+    ],
+  },
+  {
+    name: "Interpersonal Skills",
+    tags: ["Building and fostering relationships", "Counseling", "Diversity and inclusion program development"],
+  },
 ];
+
+ 
+
+
+
 export const documents = [
   {
     title: "Resume",
