@@ -10,6 +10,14 @@ https://app.netlify.com/sites/verdant-toffee-de3197/overview
 ## CircleCI Test 
 Build Test:       
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/cconway1-stevens/my-portfolio/tree/first-life.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cconway1-stevens/my-portfolio/tree/first-life)
+
+## My Gist Light Hourse Report 
+
+```javascript
+// embed the Gist by pasting the Gist URL between the parentheses:
+<script src="https://lighthouse-chrom-1560304954232.firebaseapp.com"></script>
+
+
 ## Projects
 
 Here are some of the projects I've worked on recently:
