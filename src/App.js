@@ -6,6 +6,8 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
 import Documents from "./components/Documents";
+import MyCal from "./components/MyCal";
+import { Helmet } from "react-helmet";
 
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
       <Projects />
       <Skills />
       {/*<Testimonials />*/}
+      <MyCal />
       <Contact />
       {/* <Documents /> */}
     </main>
