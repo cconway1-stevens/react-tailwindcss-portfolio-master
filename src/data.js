@@ -25,7 +25,54 @@ export const projects = [
     link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
   }
 ];
-
+// data.js
+export const qualifications = [
+  {
+    "Education": [
+      {
+        "Institution": "Stevens Institute of Technology",
+        "Degree": "Bachelor of Engineering, Software Engineering",
+        "Date": "May 2022-Present"
+      },
+      {
+        "Institution": "Stevens Institute of Technology",
+        "Degree": "Master of Engineering, Engineering Management",
+        "Date": "Anticipated May 2024"
+      }
+    ],
+    "Awards": [
+      {
+        "Title": "N/A",
+        "Issuer": "N/A",
+        "Date Awarded": "N/A",
+        "URL": "N/A",
+        "Shout outs": []
+      }
+    ],
+    "Activities": [
+      {
+        "Name": "Biomedical Engineering Society (BMES)",
+        "Description": "Engaged in biomedical engineering research and development, collaborated with peers and professionals to solve real-world problems in healthcare",
+        "Date": "N/A"
+      },
+      {
+        "Name": "Software Engineering Club",
+        "Description": "Participated in workshops and events focused on software engineering and development, learned about the latest technologies and trends in the industry",
+        "Date": "N/A"
+      },
+      {
+        "Name": "Society of Hispanic Professional Engineers (SHPE)",
+        "Description": "Supported the development of Hispanic students and professionals in STEM fields, collaborated with peers and professionals to promote diversity and inclusion in the industry",
+        "Date": "N/A"
+      },
+      {
+        "Name": "Stevens Volleyball Club",
+        "Description": "Participated in the recreational volleyball team, developing team building and leadership skills",
+        "Date": "N/A"
+      }
+    ]
+  }
+]
 export const testimonials = [
   {
     quote:

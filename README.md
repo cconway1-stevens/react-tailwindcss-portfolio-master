@@ -17,7 +17,6 @@ https://verdant-toffee-de3197.netlify.app/#about
 Build Test:       
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/cconway1-stevens/my-portfolio/tree/first-life.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cconway1-stevens/my-portfolio/tree/first-life)
 
-
 ## Projects
 
 Here are some of the projects I've worked on recently:
