@@ -25,6 +25,7 @@ export const projects = [
     link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
   }
 ];
+export const tags = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Tailwind', 'React', 'Next.js', 'Gatsby', 'UI/UX', 'SVG', 'animation', 'webdev'];
 
 export const testimonials = [
   {

@@ -1,28 +1,24 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
-import { Helmet } from "react-helmet";
-
-const About = lazy(() => import("./components/About"));
-const Contact = lazy(() => import("./components/Contact"));
-const Projects = lazy(() => import("./components/Projects"));
-const Skills = lazy(() => import("./components/Skills"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
-const Documents = lazy(() => import("./components/Documents"));
-const MyCal = lazy(() => import("./components/MyCal"));
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import MyCal from "./components/MyCal";
+// import Testimonials from "./components/Testimonials";
+// import Documents from "./components/Documents";
 
 export default function App() {
   return (
     <main className="text-gray-400 bg-gray-900 body-font">
       <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <About />
-        <Projects />
-        <Skills />
-        {/*<Testimonials />*/}
-        <MyCal />
-        <Contact />
-        {/* <Documents /> */}
-      </Suspense>
+      <About />
+      <Projects />
+      <Skills />
+      {/*<Testimonials />*/}
+      <MyCal />
+      <Contact />
+      {/* <Documents /> */}
     </main>
   );
 }
