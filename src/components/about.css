@@ -42,7 +42,7 @@
     }
   }
   .wave {
-    animation: wave-animation 3s;
+    animation: wave-animation 5s;
     display: inline-block;
   }
   
