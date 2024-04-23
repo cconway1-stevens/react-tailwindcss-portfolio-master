@@ -55,6 +55,12 @@ export default function About() {
             >
               LinkedIn <i className="fab fa-linkedin"></i>
             </a>
+                <a
+              href="https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+              className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+            >
+              Resume <i className="fab fa-linkedin"></i>
+            </a>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 animate-slide-in-right">
