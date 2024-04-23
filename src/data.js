@@ -69,7 +69,7 @@ export const skills = [
   },
   {
     name: "Back-end Development",
-    tags: ["Node.js", "Python", "Ruby on Rails", "PHP"],
+    tags: ["Node.js", "Python", "Ruby on Rails", "PHP", "Django"],
   },
   {
     name: "Software development",
@@ -86,6 +86,9 @@ export const skills = [
       "Python",
       "HTML",
       "React",
+      "Swift",
+      "Git/GitHub/GitLab/SVN",
+      "Docker/Kubernetes",
     ],
   },
   {
@@ -126,7 +129,35 @@ export const skills = [
   },
   {
     name: "Interpersonal Skills",
-    tags: ["Building and fostering relationships", "Counseling", "Diversity and inclusion program development"],
+    tags: [
+      "Building and fostering relationships",
+      "Counseling",
+      "Diversity and inclusion program development",
+    ],
+  },
+  {
+    name: "Data Analysis and Machine Learning",
+    tags: [
+      "Pandas",
+      "Numpy",
+      "Scipy",
+      "Matplotlib",
+      "TensorFlow",
+      "Keras",
+      "PyTorch",
+    ],
+  },
+  {
+    name: "Audio Editing",
+    tags: ["Audacity"],
+  },
+  {
+    name: "Accounting Software",
+    tags: ["QuickBooks Pro/BookWorks"],
+  },
+  {
+    name: "Document Editing and Creation",
+    tags: ["Adobe Acrobat Suite"],
   },
 ];
 
