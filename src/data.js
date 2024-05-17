@@ -13,19 +13,31 @@ export const projects = [
     description:
       "This site was built using React and Tailwind CSS. It is hosted on Netlify.",
     image: "this-site.svg",
-    link: "https://github.com/cconway1-stevens/my-portfolio"
+    link: "https://github.com/cconway1-stevens/my-portfolio",
   },
   {
     title: "ChoreNScore",
     subtitle: "React",
-    description:
-    "This site was built using React and firebase as a backend.",
+    description: "This site was built using React and firebase as a backend.",
     //"ChoreNScore is a web application that allows users to create and manage chores for their household. Users can create chores, assign them to other users, and track the completion of chores. Users can also view their own chore history and the chore history of other users. This application was created using React, Node.js, Express, and MongoDB.",
     image: "ChoreNScore.svg",
-    link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
-  }
+    link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+  },
 ];
-export const tags = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Tailwind', 'React', 'Next.js', 'Gatsby', 'UI/UX', 'SVG', 'animation', 'webdev'];
+export const tags = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Typescript",
+  "Tailwind",
+  "React",
+  "Next.js",
+  "Gatsby",
+  "UI/UX",
+  "SVG",
+  "animation",
+  "webdev",
+];
 
 export const testimonials = [
   {
@@ -161,10 +173,6 @@ export const skills = [
   },
 ];
 
- 
-
-
-
 export const documents = [
   {
     title: "Resume",
@@ -173,5 +181,5 @@ export const documents = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
     image: "./resume.jpg",
     link: "./resume.jpg",
-  }
+  },
 ];

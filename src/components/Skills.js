@@ -12,7 +12,7 @@ export default function Skills() {
             Skills &amp; Technologies
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-          Now Thats What I call a lot of skills! 😎
+            Now Thats What I call a lot of skills! 😎
           </p>
         </div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
@@ -21,7 +21,9 @@ export default function Skills() {
               <div className="bg-gray-800 rounded flex p-4 h-full items-center">
                 <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
                 <div>
-                  <h2 className="text-white text-lg font-medium mb-2">{skill.name}</h2>
+                  <h2 className="text-white text-lg font-medium mb-2">
+                    {skill.name}
+                  </h2>
                   <div className="flex flex-wrap">
                     {skill.tags.map((tag) => (
                       <span key={tag} className="text-gray-400 mr-2 mb-2">

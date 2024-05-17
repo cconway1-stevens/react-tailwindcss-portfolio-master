@@ -44,6 +44,7 @@ import { projects } from "../data";
 //     </section>
 //   );
 // }
+
 export default function Projects() {
   return (
     <section id="projects" className="text-gray-400 bg-gray-900 body-font">
@@ -62,7 +63,8 @@ export default function Projects() {
             <a
               href={project.link}
               key={project.image}
-              className="sm:w-1/2 w-100 p-4 flex justify-center">
+              className="sm:w-1/2 w-100 p-4 flex justify-center"
+            >
               <div className="flex relative">
                 <img
                   alt="gallery"

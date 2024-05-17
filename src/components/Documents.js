@@ -22,7 +22,8 @@ export default function Documents() {
             <a
               href={documents.link}
               key={documents.image}
-              className="sm:w-1/2 w-100 p-4">
+              className="sm:w-1/2 w-100 p-4"
+            >
               <div className="flex relative">
                 <img
                   alt="gallery"
