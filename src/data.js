@@ -72,7 +72,7 @@ export const testimonials = [
 //   "Research: Conducting experiments, recording and processing experimental data, calibrating and operating lab instrumentation",
 //   "Teaching and Mentoring: Developing materials, providing feedback, assisting professors during guest lectures",
 //   "Interpersonal Skills: Building and fostering relationships, counseling, diversity and inclusion program development"
-// ];
+// ];u
 
 export const skills = [
   {
@@ -84,12 +84,12 @@ export const skills = [
     tags: ["Node.js", "Python", "Ruby on Rails", "PHP", "Django"],
   },
   {
-    name: "Software development",
+    name: "Software Development",
     tags: [
       "SolidWorks",
       "Arduino",
       "AutoCAD",
-      "Microsoft Office: Word, PowerPoint, Excel, Visio",
+      "Microsoft Office (Word, PowerPoint, Excel, Visio)",
       "LabVIEW",
       "C#",
       "C++",
@@ -99,60 +99,61 @@ export const skills = [
       "HTML",
       "React",
       "Swift",
-      "Git/GitHub/GitLab/SVN",
-      "Docker/Kubernetes",
+      "Git (GitHub/GitLab/SVN)",
+      "Docker",
+      "Kubernetes",
     ],
   },
   {
     name: "Project Management",
     tags: [
-      "Liaising with clients",
-      "Requirements gathering",
+      "Client Liaison",
+      "Requirements Gathering",
       "Budgeting",
-      "Incident reporting",
-      "Maintenance requests",
-      "Room transfers",
-      "Facilitating interviews",
+      "Incident Reporting",
+      "Maintenance Requests",
+      "Room Transfers",
+      "Interview Facilitation",
     ],
   },
   {
     name: "UI/UX Design",
     tags: [
-      "Creating Figma models",
-      "Conducting consumer interviews",
-      "Presenting designs to clients",
+      "Figma",
+      "Consumer Interviews",
+      "Design Presentations",
     ],
   },
   {
     name: "Research",
     tags: [
-      "Conducting experiments",
-      "Recording and processing experimental data",
-      "Calibrating and operating lab instrumentation",
+      "Experimentation",
+      "Data Recording & Processing",
+      "Lab Instrument Calibration & Operation",
     ],
   },
   {
     name: "Teaching and Mentoring",
     tags: [
-      "Developing materials",
-      "Providing feedback",
-      "Assisting professors during guest lectures",
+      "Material Development",
+      "Feedback Provision",
+      "Guest Lecture Assistance",
     ],
   },
   {
     name: "Interpersonal Skills",
     tags: [
-      "Building and fostering relationships",
+      "Relationship Building",
       "Counseling",
-      "Diversity and inclusion program development",
+      "Diversity & Inclusion Program Development",
     ],
   },
   {
     name: "Data Analysis and Machine Learning",
     tags: [
       "Pandas",
-      "Numpy",
-      "Scipy",
+      "NumPy",
+      "SciPy",
       "Matplotlib",
       "TensorFlow",
       "Keras",
@@ -165,7 +166,7 @@ export const skills = [
   },
   {
     name: "Accounting Software",
-    tags: ["QuickBooks Pro/BookWorks"],
+    tags: ["QuickBooks Pro", "BookWorks"],
   },
   {
     name: "Document Editing and Creation",
@@ -181,5 +182,57 @@ export const documents = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
     image: "./resume.jpg",
     link: "./resume.jpg",
+  },
+];
+
+
+export const jobExperiences = [
+  {
+    title: "SYSTEMS RESEARCHER",
+    company: "New Observing Strategies Testbed (NOS-T) Project for Collective Design Lab at Stevens via NASA/D.O.D",
+    location: "Hoboken, NJ",
+    duration: "May 2023 - September 2023",
+    responsibilities: [
+      "Crafted detailed consumer interviews with 20 users using structured questionnaires to extract critical user needs, pain points, and usage patterns, directly influencing product direction and design improvements.",
+      "Authored and optimized requirement documents that translated complex user research findings into clear, actionable instructions for engineers, contributing to a 29% increase in project efficiency.",
+      "Facilitated communication between end-users and engineering teams, enhancing project collaboration and reducing miscommunications by streamlining workflow processes.",
+      "Designed and refined high-fidelity Figma models based on iterative user feedback, which increased client satisfaction by 20% and accelerated project approval from initial concept stages.",
+    ],
+  },
+  {
+    title: "JUNIOR SOFTWARE ENGINEER",
+    company: "F&S Digital Agency",
+    location: "Ventnor, NJ",
+    duration: "May 2022 - January 2024",
+    responsibilities: [
+      "Conducted over 30 consumer interviews to identify user needs, leading to the development of detailed requirement documentation that guided engineering design and implementation.",
+      "Served as the key liaison for 5 major projects, facilitating effective communication between clients and a development team of 10 members, ensuring requirements alignment and project success.",
+      "Developed over 20 detailed Figma models for UI/UX projects, enhancing client understanding and approval rates by 30% through interactive presentations and requirement validations.",
+      "Engineered and prototyped an innovative software solution, leading to a successful sale under NDA; project resulted in a 20% performance improvement for the client’s operations.",
+    ],
+  },
+  {
+    title: "SOFTWARE AND TECHNICAL ENGINEERING INTERN",
+    company: "US Instruments INC",
+    location: "Lanoka Harbor, NJ",
+    duration: "April 2021 - September 2021",
+    responsibilities: [
+      "Enhanced the UI/UX efficiency of Parks Flow Lab® by 11.5%, following extensive user and stakeholder feedback.",
+      "Integrated new protocols into the sales system, reducing data entry errors by 8%.",
+      "Improved hardware-software integration by troubleshooting and repairing critical system components, enhancing system reliability.",
+    ],
+  },
+  {
+    title: "RESEARCH ASSISTANT",
+    company: "Stevens Department of Civil, Ocean, and Environmental Engineering",
+    location: "Hoboken, NJ",
+    duration: "November 2020 – May 2021",
+    responsibilities: [
+      "Spearheaded a Department of Defense-funded initiative to innovate sustainable and resilient wastewater treatment technologies, achieving significant advancements in environmental engineering.",
+      "Designed and conducted controlled experiments on nutrient-laden synthetic wastewater, employing meticulous attention to procedural detail which resulted in improved process efficiency and accuracy.",
+      "Mastered technical proficiency in calibrating and operating sophisticated laboratory instruments, including anion and cation ion chromatography (IC) and high-performance liquid chromatography (HPLC), to support high-stakes research projects.",
+      "Analyzed experimental data to track water treatment parameters such as pH, nitrate levels, and temperature, identifying key transformations that facilitate algal growth and energy production.",
+      "Operated a variety of specialized lab equipment, such as cation and anion analyzers, to execute critical research tasks and contribute to the development of groundbreaking wastewater treatment solutions.",
+    ],
   },
 ];

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./about.css";
+import PopButton from "./PopButton"; // Adjust the path as needed
 
 export default function About() {
   const [wave, setWave] = useState(false);
@@ -14,6 +15,14 @@ export default function About() {
   const handleWave = () => {
     setWave(true);
   };
+
+  const extraButtons = [
+    {
+      link: 'https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor',
+      text: 'Canva Link'
+    }
+   
+  ];
 
   return (
     <section id="about" className="about-section">
@@ -60,12 +69,11 @@ export default function About() {
             >
               LinkedIn <i className="fab fa-linkedin"></i>
             </a>
-            <a
-              href="https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-              className="inline-flex button text-gray-400 bg-gray-800 border-0 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
-            >
-              Resume <i className="fab fa-linkedin"></i>
-            </a>
+            <PopButton
+              link="https://www.canva.com/design/DAGDPQkDeAU/xDSaDYvQz6Lb61GN1ALc1Q/view?embed"
+              buttonText="Resume"
+              extraButtons={extraButtons}
+            />
           </div>
         </div>
         <div className="lg:max-w-lg lg:h-full md:w-1/2 w-5/6 animate-slide-in-right">
