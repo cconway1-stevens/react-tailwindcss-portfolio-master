@@ -115,9 +115,7 @@ export default function JobExperience() {
   return (
     <section
       id="job-experience"
-      className={`text-gray-400 bg-gray-900 body-font py-10 relative ${
-        highlightSection ? "animate-glow" : ""
-      }`}
+      className={`text-gray-400 bg-gray-900 body-font py-10 relative ${highlightSection ? "animate-glow" : ""}`}
     >
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
@@ -125,46 +123,50 @@ export default function JobExperience() {
             Work Experience
           </h1>
         </div>
-        <div className="mb-6 flex justify-between items-center">
-          <div>
-            <label htmlFor="filter" className="text-white mr-2">
-              Filter by:
-            </label>
-            <input
-              id="filter"
-              type="text"
-              value={filter}
-              onChange={handleFilterChange}
-              className="p-2 rounded bg-gray-800 text-white"
-              placeholder="Company or Location"
-            />
-          </div>
-          <div>
-            <label htmlFor="search" className="text-white mr-2">
-              Search:
-            </label>
-            <input
-              id="search"
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="p-2 rounded bg-gray-800 text-white"
-              placeholder="Search jobs..."
-            />
-          </div>
-          <div>
-            <button
-              onClick={() => toggleAll(true)}
-              className="p-2 rounded bg-blue-600 text-white mr-2"
-            >
-              Open All
-            </button>
-            <button
-              onClick={() => toggleAll(false)}
-              className="p-2 rounded bg-red-600 text-white"
-            >
-              Close All
-            </button>
+        <div className="mb-6">
+          <div className="bg-gray-800 bg-opacity-40 p-8 rounded-lg shadow-lg flex flex-wrap justify-between items-center">
+            <div className="flex flex-wrap">
+              <div className="mr-4 mb-2">
+                <label htmlFor="filter" className="text-white mr-2">
+                  Filter by:
+                </label>
+                <input
+                  id="filter"
+                  type="text"
+                  value={filter}
+                  onChange={handleFilterChange}
+                  className="p-2 rounded bg-gray-800 text-white"
+                  placeholder="Company or Location"
+                />
+              </div>
+              <div>
+                <label htmlFor="search" className="text-white mr-2">
+                  Search:
+                </label>
+                <input
+                  id="search"
+                  type="text"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                  className="p-2 rounded bg-gray-800 text-white"
+                  placeholder="Search jobs..."
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                onClick={() => toggleAll(true)}
+                className="p-2 rounded bg-blue-600 text-white mr-2"
+              >
+                Open All
+              </button>
+              <button
+                onClick={() => toggleAll(false)}
+                className="p-2 rounded bg-red-600 text-white"
+              >
+                Close All
+              </button>
+            </div>
           </div>
         </div>
         <div className="flex flex-wrap -m-4">

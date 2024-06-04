@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       keyframes: {
         glow: {
-          "0%, 100%": { boxShadow: "0 0 10px rgba(0, 255, 0, 0.5)" },
-          "50%": { boxShadow: "0 0 20px rgba(0, 255, 0, 1)" },
+          "0%": { boxShadow: "0 0 10px rgba(236, 173, 41, 0.5)" },
+          "100%": { boxShadow: "0 0 20px rgba(236, 173, 41, 1)" },
         },
         fadeOut: {
           "0%": { opacity: 1 },
@@ -14,7 +14,7 @@ module.exports = {
         },
       },
       animation: {
-        glow: "glow 3s ease-in-out",
+        glow: "glow 1.5s infinite alternate",
         fadeOut: "fadeOut 3s ease-out forwards",
       },
     },

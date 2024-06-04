@@ -24,10 +24,10 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="about-section">
-      <div className="container mx-auto flex px-6 py-12 md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-1/2 lg:pr-16 md:pr-12 flex flex-col md:items-start md:text-left mb-8 md:mb-0 items-center text-center animate-slide-in-left">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+    <section id="about" className="about-section bg-gray-800 text-white">
+      <div className="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 flex flex-col items-center text-center mb-8 md:mb-0">
+          <h1 className="text-3xl md:text-4xl mb-4 font-medium">
             Hi, I'm Cameron{" "}
             <span
               className={`wave${wave ? " active" : ""}`}
@@ -55,16 +55,16 @@ export default function About() {
             button and let’s brew up some great ideas!
           </p>
 
-          <div className="button-container animate-slide-in-left">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
             <a
               href="#contact"
-              className="inline-flex button text-white bg-green-500 border-0 focus:outline-none hover:bg-green-600 rounded text-lg"
+              className="button bg-green-500 hover:bg-green-600 rounded-lg py-2 px-6 text-lg"
             >
               Let's Connect ☕️
             </a>
             <a
               href="https://www.linkedin.com/in/cameron-conway-07270819b/"
-              className="inline-flex button text-gray-400 bg-gray-800 border-0 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+              className="button bg-gray-800 hover:bg-gray-700 rounded-lg py-2 px-6 text-lg"
             >
               LinkedIn <i className="fab fa-linkedin"></i>
             </a>
@@ -75,10 +75,10 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="lg:max-w-lg lg:h-full md:w-1/2 w-5/6 animate-slide-in-right">
+        <div className="md:w-1/2">
           <div>
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-lg w-full"
               alt="hero"
               src="./coding.svg"
             />
