@@ -1,16 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import { jobExperiences } from "../data";
+import JobExperienceReader from "./JobExperienceReader";
+import JobExperienceCard from "./JobExperienceCard";
 
-export default function JobExperience() {
+export default function JobExperienceList() {
   const [contextMenu, setContextMenu] = useState(null);
   const [showSign, setShowSign] = useState(false);
   const [highlightSection, setHighlightSection] = useState(false);
-  const [speechSynthesisInstance, setSpeechSynthesisInstance] = useState(null);
-  const [expandedJobs, setExpandedJobs] = useState([]);
   const [filter, setFilter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredJobs, setFilteredJobs] = useState(jobExperiences);
-
+  const [allCardsVisible, setAllCardsVisible] = useState(true);
+  const [expandAllCards, setExpandAllCards] = useState(false);
   const selectedTextRef = useRef("");
 
   useEffect(() => {
@@ -20,27 +21,10 @@ export default function JobExperience() {
         setShowSign(false);
         setHighlightSection(true);
         setTimeout(() => setHighlightSection(false), 3000);
-      }, 3000); // Show the sign for 3 seconds
+      }, 3000);
       localStorage.setItem("signShown", "true");
     }
   }, []);
-
-  const startReading = () => {
-    if (speechSynthesisInstance) {
-      window.speechSynthesis.cancel();
-    }
-    const speech = new SpeechSynthesisUtterance(selectedTextRef.current);
-    setSpeechSynthesisInstance(speech);
-    window.speechSynthesis.speak(speech);
-    setContextMenu(null); // Close the context menu after reading starts
-  };
-
-  const stopReading = () => {
-    if (speechSynthesisInstance) {
-      window.speechSynthesis.cancel();
-      setSpeechSynthesisInstance(null);
-    }
-  };
 
   const handleContextMenu = (event, text) => {
     event.preventDefault();
@@ -55,30 +39,16 @@ export default function JobExperience() {
     setContextMenu(null);
   };
 
-  const toggleExpand = (id) => {
-    if (expandedJobs.includes(id)) {
-      setExpandedJobs(expandedJobs.filter((i) => i !== id));
-    } else {
-      setExpandedJobs([...expandedJobs, id]);
-    }
-  };
-
-  const toggleAll = (expand) => {
-    if (expand) {
-      setExpandedJobs(jobExperiences.map((job) => job.id));
-    } else {
-      setExpandedJobs([]);
-    }
-  };
-
   const handleFilterChange = (e) => {
-    setFilter(e.target.value);
-    applyFilter(e.target.value, searchTerm);
+    const newFilter = e.target.value;
+    setFilter(newFilter);
+    applyFilter(newFilter, searchTerm);
   };
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-    applyFilter(filter, e.target.value);
+    const newSearchTerm = e.target.value;
+    setSearchTerm(newSearchTerm);
+    applyFilter(filter, newSearchTerm);
   };
 
   const applyFilter = (filter, searchTerm) => {
@@ -105,17 +75,26 @@ export default function JobExperience() {
     setFilteredJobs(filtered);
   };
 
-  // Sort job experiences by startDate and endDate
   const sortedJobExperiences = filteredJobs.sort((a, b) => {
     const dateA = a.endDate ? new Date(a.endDate) : new Date();
     const dateB = b.endDate ? new Date(b.endDate) : new Date();
     return dateB - dateA || new Date(b.startDate) - new Date(a.startDate);
   });
 
+  const toggleAllCardsVisibility = () => {
+    setAllCardsVisible(!allCardsVisible);
+  };
+
+  const toggleExpandAllCards = () => {
+    setExpandAllCards(!expandAllCards);
+  };
+
   return (
     <section
       id="job-experience"
-      className={`text-gray-400 bg-gray-900 body-font py-10 relative ${highlightSection ? "animate-glow" : ""}`}
+      className={`text-gray-400 bg-gray-900 body-font py-10 relative ${
+        highlightSection ? "animate-glow" : ""
+      }`}
     >
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
@@ -153,132 +132,48 @@ export default function JobExperience() {
                 />
               </div>
             </div>
-            <div>
+            <div className="flex space-x-4">
               <button
-                onClick={() => toggleAll(true)}
-                className="p-2 rounded bg-blue-600 text-white mr-2"
+                onClick={toggleAllCardsVisibility}
+                className="text-white bg-blue-500 p-2 rounded hover:bg-blue-600"
               >
-                Open All
+                {allCardsVisible ? "Hide All" : "Show All"}
               </button>
               <button
-                onClick={() => toggleAll(false)}
-                className="p-2 rounded bg-red-600 text-white"
+                onClick={toggleExpandAllCards}
+                className="text-white bg-green-500 p-2 rounded hover:bg-green-600"
               >
-                Close All
+                {expandAllCards ? "Collapse All" : "Expand All"}
               </button>
             </div>
           </div>
         </div>
         <div className="flex flex-wrap -m-4">
           {sortedJobExperiences.map((job) => (
-            <div
+            <JobExperienceCard
               key={job.id}
-              className="p-4 md:w-1/2 w-full"
-              onContextMenu={(e) =>
-                handleContextMenu(
-                  e,
-                  `${job.title} at ${
-                    job.company
-                  }. Responsibilities: ${job.responsibilities.join(". ")}`
-                )
-              }
-            >
-              <button
-                className="h-full w-full text-left bg-gray-800 bg-opacity-40 p-8 rounded-lg transform transition duration-500 hover:scale-105 hover:bg-gray-700 shadow-lg"
-                onClick={() => toggleExpand(job.id)}
-              >
-                <div className="flex justify-between items-center">
-                  <h2 className="text-2xl font-medium text-white mb-2">
-                    {job.title}
-                  </h2>
-                  <svg
-                    className={`w-6 h-6 text-white transform transition-transform duration-300 ${
-                      expandedJobs.includes(job.id) ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </div>
-                <p className="text-gray-500">
-                  {job.company} - {job.location}
-                </p>
-                <p className="text-gray-400 mb-4">
-                  {new Date(job.startDate).toLocaleDateString()} -{" "}
-                  {job.endDate
-                    ? new Date(job.endDate).toLocaleDateString()
-                    : "Present"}
-                </p>
-                {expandedJobs.includes(job.id) && (
-                  <ul className="list-disc list-inside text-gray-400 ml-4">
-                    {job.responsibilities.map((responsibility) => (
-                      <li key={responsibility} className="mb-2">
-                        {responsibility}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </button>
-            </div>
+              job={job}
+              handleContextMenu={handleContextMenu}
+              isVisible={allCardsVisible}
+              expandAll={expandAllCards}
+            />
           ))}
         </div>
       </div>
-      {contextMenu && (
-        <div
-          className="fixed z-50 bg-gray-800 text-white rounded shadow-lg"
-          style={{ top: contextMenu.mouseY, left: contextMenu.mouseX }}
-        >
-          <ul className="py-1">
-            <li
-              className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              onClick={startReading}
-              role="menuitem"
-              tabIndex="0"
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  startReading();
-                }
-              }}
-            >
-              Read Aloud
-            </li>
-            <li
-              className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              onClick={stopReading}
-              role="menuitem"
-              tabIndex="0"
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  stopReading();
-                }
-              }}
-            >
-              Stop Reading
-            </li>
-            <li
-              className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              onClick={handleClose}
-              role="menuitem"
-              tabIndex="0"
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleClose();
-                }
-              }}
-            >
-              Cancel
-            </li>
-          </ul>
-        </div>
-      )}
+      <JobExperienceReader
+        contextMenu={contextMenu}
+        selectedTextRef={selectedTextRef}
+        startReading={() => {
+          const speech = new SpeechSynthesisUtterance(selectedTextRef.current);
+          window.speechSynthesis.speak(speech);
+          handleClose();
+        }}
+        stopReading={() => {
+          window.speechSynthesis.cancel();
+          handleClose();
+        }}
+        handleClose={handleClose}
+      />
       {showSign && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-gray-800 text-white rounded shadow-lg p-4 animate-fade-out">
           <p>Right-click on a job to access additional options.</p>

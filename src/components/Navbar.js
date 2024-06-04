@@ -5,7 +5,10 @@ export default function Navbar() {
   return (
     <header className="bg-gray-800 md:sticky top-0 z-10">
       <div className="container mx-auto flex flex-wrap p-3 md:p-5 flex-col md:flex-row items-center">
-        <a href="#about" className="title-font font-medium text-white mb-4 md:mb-0 md:mr-auto">
+        <a
+          href="#about"
+          className="title-font font-medium text-white mb-4 md:mb-0 md:mr-auto"
+        >
           Cameron-Conway.js
         </a>
         <nav className="flex flex-wrap items-center text-base justify-center md:ml-auto">
