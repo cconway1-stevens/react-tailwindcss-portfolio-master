@@ -1,75 +1,116 @@
-.about-section {
-  background-color: #1a202c;
-  padding: 4rem 0;
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+:root {
+  --text: hsl(0, 0%, 99%);
+  --textDim: hsl(0, 0%, 60%);
+  --background: hsl(0, 0%, 7%);
+  --primary: hsl(155, 100%, 65%);
+  --primaryBg: hsla(155, 100%, 65%, 1%);
+  --primaryHi: hsla(155, 100%, 75%, 25%);
+  --primaryFg: hsl(155, 100%, 85%);
+  --secondary: hsl(156, 51%, 14%);
+  --secondaryFg: hsl(156, 51%, 75%);
+  --secondaryBg: hsla(156, 51%, 14%, 5%);
+  --secondaryHi: hsla(156, 51%, 30%, 50%);
+  --accent: hsl(155, 100%, 94%);
+  --accentBg: hsla(155, 100%, 94%, 1%);
+  --accentHi: hsla(155, 100%, 100%, 25%);
 }
 
-.wave {
-  animation: wave-animation 5s;
-  display: inline-block;
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content .buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.bg-secondary {
+  background-color: var(--secondaryBg);
+  color: var(--text);
+}
+
+.img-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.05;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
 }
 
 @keyframes wave-animation {
-  0% {
+  0%, 100% {
     transform: rotate(0deg);
   }
-  10% {
-    transform: rotate(12deg);
+  10%, 30%, 50%, 70%, 90% {
+    transform: rotate(-10deg);
   }
-  20% {
-    transform: rotate(-12deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-14deg);
-  }
-  50% {
-    transform: rotate(18deg);
-  }
-  60% {
-    transform: rotate(-18deg);
-  }
-  70% {
-    transform: rotate(8deg);
-  }
-  80% {
-    transform: rotate(-8deg);
-  }
-  90% {
-    transform: rotate(4deg);
-  }
-  100% {
-    transform: rotate(0deg);
+  20%, 40%, 60%, 80% {
+    transform: rotate(10deg);
   }
 }
 
-@keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 1s ease;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 1s ease;
+.wave {
+  display: inline-block;
+  animation: wave-animation 2s infinite;
 }
