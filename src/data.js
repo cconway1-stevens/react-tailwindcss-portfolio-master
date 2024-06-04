@@ -325,6 +325,41 @@ export const jobExperiences = [
   },
 ];
 
+export const aboutContent = {
+  introduction: {
+    waveText: "👋",
+    greeting: "Hi, I'm Cameron",
+    tagline: "Welcome to my portfolio!",
+    description1: "I'm a software engineer with a passion for solving tough problems and sparking innovation. I thrive on teamwork, collaborating with clients and dev squads to deliver top-notch results. My experience spans academia and professional projects, giving me a versatile skill set and fresh perspective.",
+    description2: "Thanks for stopping by my little corner of the internet. Dive in, explore my work, and let’s make something awesome together. Ready to connect? How about we start with a cup of coffee (or two)? Hit that button and let’s brew up some great ideas!"
+  },
+  buttons: [
+    {
+      href: "#contact",
+      text: "Let's Connect ☕️",
+      classes: "button bg-green-500 hover:bg-green-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105",
+    },
+    {
+      href: "https://www.linkedin.com/in/cameron-conway-07270819b/",
+      text: "LinkedIn",
+      classes: "button bg-gray-800 hover:bg-gray-700 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105",
+      iconClass: "fab fa-linkedin"
+    },
+    {
+      link: "https://www.canva.com/design/DAGDPQkDeAU/xDSaDYvQz6Lb61GN1ALc1Q/view?embed",
+      text: "Resume",
+    },
+  ],
+};
+
+export const extraButtons = [
+  {
+    link: "https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+    text: "Canva Link",
+  },
+];
+
+
 // export const projects = [
 //   // {
 //   //   title: "This Site",

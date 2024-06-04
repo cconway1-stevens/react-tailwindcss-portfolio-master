@@ -164,7 +164,9 @@ export default function JobExperienceList() {
         contextMenu={contextMenu}
         selectedTextRef={selectedTextRef}
         startReading={() => {
-          const speech = new SpeechSynthesisUtterance(selectedTextRef.current);
+          const speech = new SpeechSynthesisUtterance(
+            selectedTextRef.current
+          );
           window.speechSynthesis.speak(speech);
           handleClose();
         }}
