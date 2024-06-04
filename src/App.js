@@ -5,7 +5,7 @@ import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import MyCal from "./components/MyCal";
-import JobExperience from "./components/JobExperience";  // Import JobExperience
+import JobExperience from "./components/JobExperience"; // Import JobExperience
 
 export default function App() {
   return (

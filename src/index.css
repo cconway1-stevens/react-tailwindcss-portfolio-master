@@ -5,7 +5,8 @@
 /* src/styles/tailwind.css */
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   }
   50% {

@@ -29,9 +29,19 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className={`p-2 sm:w-1/2 w-full skill-card ${activeSkill === skill.name ? "box-glow" : ""}`}
-              onMouseEnter={() => document.querySelectorAll('.skill-card').forEach(el => el.classList.add('hovered'))}
-              onMouseLeave={() => document.querySelectorAll('.skill-card').forEach(el => el.classList.remove('hovered'))}
+              className={`p-2 sm:w-1/2 w-full skill-card ${
+                activeSkill === skill.name ? "box-glow" : ""
+              }`}
+              onMouseEnter={() =>
+                document
+                  .querySelectorAll(".skill-card")
+                  .forEach((el) => el.classList.add("hovered"))
+              }
+              onMouseLeave={() =>
+                document
+                  .querySelectorAll(".skill-card")
+                  .forEach((el) => el.classList.remove("hovered"))
+              }
             >
               <div className="bg-gray-800 rounded-lg flex p-4 h-full items-center transition-all transform hover:scale-105">
                 <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />

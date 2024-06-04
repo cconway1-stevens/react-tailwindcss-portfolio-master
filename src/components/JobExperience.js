@@ -1,5 +1,3 @@
-// src/components/JobExperience.js
-
 import React, { useState, useRef, useEffect } from "react";
 import { jobExperiences } from "../data";
 
@@ -8,6 +6,11 @@ export default function JobExperience() {
   const [showSign, setShowSign] = useState(false);
   const [highlightSection, setHighlightSection] = useState(false);
   const [speechSynthesisInstance, setSpeechSynthesisInstance] = useState(null);
+  const [expandedJobs, setExpandedJobs] = useState([]);
+  const [filter, setFilter] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredJobs, setFilteredJobs] = useState(jobExperiences);
+
   const selectedTextRef = useRef("");
 
   useEffect(() => {
@@ -52,6 +55,63 @@ export default function JobExperience() {
     setContextMenu(null);
   };
 
+  const toggleExpand = (id) => {
+    if (expandedJobs.includes(id)) {
+      setExpandedJobs(expandedJobs.filter((i) => i !== id));
+    } else {
+      setExpandedJobs([...expandedJobs, id]);
+    }
+  };
+
+  const toggleAll = (expand) => {
+    if (expand) {
+      setExpandedJobs(jobExperiences.map((job) => job.id));
+    } else {
+      setExpandedJobs([]);
+    }
+  };
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+    applyFilter(e.target.value, searchTerm);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    applyFilter(filter, e.target.value);
+  };
+
+  const applyFilter = (filter, searchTerm) => {
+    let filtered = jobExperiences;
+
+    if (filter) {
+      filtered = filtered.filter(
+        (job) => job.company.includes(filter) || job.location.includes(filter)
+      );
+    }
+
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (job) =>
+          job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          job.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          job.responsibilities.some((res) =>
+            res.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+      );
+    }
+
+    setFilteredJobs(filtered);
+  };
+
+  // Sort job experiences by startDate and endDate
+  const sortedJobExperiences = filteredJobs.sort((a, b) => {
+    const dateA = a.endDate ? new Date(a.endDate) : new Date();
+    const dateB = b.endDate ? new Date(b.endDate) : new Date();
+    return dateB - dateA || new Date(b.startDate) - new Date(a.startDate);
+  });
+
   return (
     <section
       id="job-experience"
@@ -65,32 +125,106 @@ export default function JobExperience() {
             Work Experience
           </h1>
         </div>
+        <div className="mb-6 flex justify-between items-center">
+          <div>
+            <label htmlFor="filter" className="text-white mr-2">
+              Filter by:
+            </label>
+            <input
+              id="filter"
+              type="text"
+              value={filter}
+              onChange={handleFilterChange}
+              className="p-2 rounded bg-gray-800 text-white"
+              placeholder="Company or Location"
+            />
+          </div>
+          <div>
+            <label htmlFor="search" className="text-white mr-2">
+              Search:
+            </label>
+            <input
+              id="search"
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="p-2 rounded bg-gray-800 text-white"
+              placeholder="Search jobs..."
+            />
+          </div>
+          <div>
+            <button
+              onClick={() => toggleAll(true)}
+              className="p-2 rounded bg-blue-600 text-white mr-2"
+            >
+              Open All
+            </button>
+            <button
+              onClick={() => toggleAll(false)}
+              className="p-2 rounded bg-red-600 text-white"
+            >
+              Close All
+            </button>
+          </div>
+        </div>
         <div className="flex flex-wrap -m-4">
-          {jobExperiences.map((job, index) => (
+          {sortedJobExperiences.map((job) => (
             <div
-              key={index}
+              key={job.id}
               className="p-4 md:w-1/2 w-full"
               onContextMenu={(e) =>
                 handleContextMenu(
                   e,
-                  `${job.title} at ${job.company}. Responsibilities: ${job.responsibilities.join(
-                    ". "
-                  )}`
+                  `${job.title} at ${
+                    job.company
+                  }. Responsibilities: ${job.responsibilities.join(". ")}`
                 )
               }
             >
-              <div className="h-full bg-gray-800 bg-opacity-40 p-8 rounded-lg transform transition duration-500 hover:scale-105 hover:bg-gray-700 shadow-lg">
-                <h2 className="text-2xl font-medium text-white mb-2">{job.title}</h2>
+              <button
+                className="h-full w-full text-left bg-gray-800 bg-opacity-40 p-8 rounded-lg transform transition duration-500 hover:scale-105 hover:bg-gray-700 shadow-lg"
+                onClick={() => toggleExpand(job.id)}
+              >
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl font-medium text-white mb-2">
+                    {job.title}
+                  </h2>
+                  <svg
+                    className={`w-6 h-6 text-white transform transition-transform duration-300 ${
+                      expandedJobs.includes(job.id) ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </div>
                 <p className="text-gray-500">
                   {job.company} - {job.location}
                 </p>
-                <p className="text-gray-400 mb-4">{job.duration}</p>
-                <ul className="list-disc list-inside text-gray-400 ml-4">
-                  {job.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="mb-2">{responsibility}</li>
-                  ))}
-                </ul>
-              </div>
+                <p className="text-gray-400 mb-4">
+                  {new Date(job.startDate).toLocaleDateString()} -{" "}
+                  {job.endDate
+                    ? new Date(job.endDate).toLocaleDateString()
+                    : "Present"}
+                </p>
+                {expandedJobs.includes(job.id) && (
+                  <ul className="list-disc list-inside text-gray-400 ml-4">
+                    {job.responsibilities.map((responsibility) => (
+                      <li key={responsibility} className="mb-2">
+                        {responsibility}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </button>
             </div>
           ))}
         </div>
@@ -104,18 +238,39 @@ export default function JobExperience() {
             <li
               className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
               onClick={startReading}
+              role="menuitem"
+              tabIndex="0"
+              onKeyPress={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  startReading();
+                }
+              }}
             >
               Read Aloud
             </li>
             <li
               className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
               onClick={stopReading}
+              role="menuitem"
+              tabIndex="0"
+              onKeyPress={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  stopReading();
+                }
+              }}
             >
               Stop Reading
             </li>
             <li
               className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
               onClick={handleClose}
+              role="menuitem"
+              tabIndex="0"
+              onKeyPress={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  handleClose();
+                }
+              }}
             >
               Cancel
             </li>
@@ -130,56 +285,3 @@ export default function JobExperience() {
     </section>
   );
 }
-
-
-
-// export const jobExperiences = [
-//   {
-//     title: "SYSTEMS RESEARCHER",
-//     company: "New Observing Strategies Testbed (NOS-T) Project for Collective Design Lab at Stevens via NASA/D.O.D",
-//     location: "Hoboken, NJ",
-//     duration: "May 2023 - September 2023",
-//     responsibilities: [
-//       "Crafted detailed consumer interviews with 20 users using structured questionnaires to extract critical user needs, pain points, and usage patterns, directly influencing product direction and design improvements.",
-//       "Authored and optimized requirement documents that translated complex user research findings into clear, actionable instructions for engineers, contributing to a 29% increase in project efficiency.",
-//       "Facilitated communication between end-users and engineering teams, enhancing project collaboration and reducing miscommunications by streamlining workflow processes.",
-//       "Designed and refined high-fidelity Figma models based on iterative user feedback, which increased client satisfaction by 20% and accelerated project approval from initial concept stages.",
-//     ],
-//   },
-//   {
-//     title: "JUNIOR SOFTWARE ENGINEER",
-//     company: "F&S Digital Agency",
-//     location: "Ventnor, NJ",
-//     duration: "May 2022 - January 2024",
-//     responsibilities: [
-//       "Conducted over 30 consumer interviews to identify user needs, leading to the development of detailed requirement documentation that guided engineering design and implementation.",
-//       "Served as the key liaison for 5 major projects, facilitating effective communication between clients and a development team of 10 members, ensuring requirements alignment and project success.",
-//       "Developed over 20 detailed Figma models for UI/UX projects, enhancing client understanding and approval rates by 30% through interactive presentations and requirement validations.",
-//       "Engineered and prototyped an innovative software solution, leading to a successful sale under NDA; project resulted in a 20% performance improvement for the client’s operations.",
-//     ],
-//   },
-//   {
-//     title: "SOFTWARE AND TECHNICAL ENGINEERING INTERN",
-//     company: "US Instruments INC",
-//     location: "Lanoka Harbor, NJ",
-//     duration: "April 2021 - September 2021",
-//     responsibilities: [
-//       "Enhanced the UI/UX efficiency of Parks Flow Lab® by 11.5%, following extensive user and stakeholder feedback.",
-//       "Integrated new protocols into the sales system, reducing data entry errors by 8%.",
-//       "Improved hardware-software integration by troubleshooting and repairing critical system components, enhancing system reliability.",
-//     ],
-//   },
-//   {
-//     title: "RESEARCH ASSISTANT",
-//     company: "Stevens Department of Civil, Ocean, and Environmental Engineering",
-//     location: "Hoboken, NJ",
-//     duration: "November 2020 – May 2021",
-//     responsibilities: [
-//       "Spearheaded a Department of Defense-funded initiative to innovate sustainable and resilient wastewater treatment technologies, achieving significant advancements in environmental engineering.",
-//       "Designed and conducted controlled experiments on nutrient-laden synthetic wastewater, employing meticulous attention to procedural detail which resulted in improved process efficiency and accuracy.",
-//       "Mastered technical proficiency in calibrating and operating sophisticated laboratory instruments, including anion and cation ion chromatography (IC) and high-performance liquid chromatography (HPLC), to support high-stakes research projects.",
-//       "Analyzed experimental data to track water treatment parameters such as pH, nitrate levels, and temperature, identifying key transformations that facilitate algal growth and energy production.",
-//       "Operated a variety of specialized lab equipment, such as cation and anion analyzers, to execute critical research tasks and contribute to the development of groundbreaking wastewater treatment solutions.",
-//     ],
-//   },
-// ];

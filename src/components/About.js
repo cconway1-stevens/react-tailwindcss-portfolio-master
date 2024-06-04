@@ -18,10 +18,9 @@ export default function About() {
 
   const extraButtons = [
     {
-      link: 'https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor',
-      text: 'Canva Link'
-    }
-   
+      link: "https://www.canva.com/design/DAGDPQkDeAU/zSt_96-u3-e4tyAgoJJWAA/view?utm_content=DAGDPQkDeAU&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+      text: "Canva Link",
+    },
   ];
 
   return (
