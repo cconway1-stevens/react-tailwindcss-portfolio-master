@@ -1,4 +1,4 @@
-export const projects = [
+xport const projects = [
   {
     title: "this.Site",
     subtitle: "React",
@@ -13,6 +13,14 @@ export const projects = [
     description: "This site was built using React and Firebase as a backend.",
     image: "ChoreNScore.svg",
     link: "https://www.canva.com/design/DAFTc0p9H2E/xIRLxMxXTKcup87oQFA5gA/watch?utm_content=DAFTc0p9H2E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+  },
+  {
+    title: "DocuTransform",
+    subtitle: "Streamlit",
+    description: 
+      "A versatile file conversion tool utilizing Streamlit for seamless transformation of text files into Markdown, Word, PDF, and RTF formats. Featuring LaTeX-like equation formatting and dynamic image placeholder replacement.",
+    image: "docu-transform.svg",
+    link: "https://github.com/cconway1-stevens/chat-helper",
   },
 ];
 
