@@ -1,4 +1,4 @@
-xport const projects = [
+export const projects = [
   {
     title: "this.Site",
     subtitle: "React",
@@ -19,7 +19,7 @@ xport const projects = [
     subtitle: "Streamlit",
     description: 
       "A versatile file conversion tool utilizing Streamlit for seamless transformation of text files into Markdown, Word, PDF, and RTF formats. Featuring LaTeX-like equation formatting and dynamic image placeholder replacement.",
-    image: "docu-transform.svg",
+    image: "DocuTransform.webp",
     link: "https://github.com/cconway1-stevens/chat-helper",
   },
 ];
