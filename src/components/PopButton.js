@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import "./PopButton.css"; // You can style the modal here
 
-const PopButton = ({ link, buttonText, extraButtons }) => {
+const PopButton = ({ link, buttonText, extraButtons, color }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -19,11 +20,13 @@ const PopButton = ({ link, buttonText, extraButtons }) => {
     }
   };
 
+  const buttonClass = `inline-flex items-center button bg-${color}-500 hover:bg-${color}-600 text-white border-0 focus:outline-none rounded text-lg py-2 px-6 transition-transform transform hover:scale-105`;
+
   return (
     <div>
       <button
         onClick={openModal}
-        className="inline-flex button text-gray-400 bg-gray-800 border-0 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+        className={buttonClass}
       >
         {buttonText}
       </button>
@@ -43,7 +46,7 @@ const PopButton = ({ link, buttonText, extraButtons }) => {
               ></script>
             </Helmet>
             <button onClick={closeModal} className="close-button">
-              Close
+              &times;
             </button>
             <div className="iframe-container">
               <iframe
@@ -56,26 +59,48 @@ const PopButton = ({ link, buttonText, extraButtons }) => {
             </div>
             {extraButtons && (
               <div className="extra-buttons">
-                {extraButtons.map((button, index) => (
+                {extraButtons.map((button) => (
                   <button
-                    key={index}
+                    key={button.id}
                     onClick={() => window.open(button.link, "_blank")}
-                    className="extra-button"
+                    className={`extra-button bg-${color}-500 hover:bg-${color}-600 text-white`}
                   >
                     {button.text}
                   </button>
                 ))}
               </div>
             )}
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>{" "}
-            by Cameron Conway
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`extra-button bg-${color}-500 hover:bg-${color}-600 text-white`}
+            >
+              Resume by Cameron Conway
+            </a>
           </div>
         </div>
       )}
     </div>
   );
+};
+
+PopButton.propTypes = {
+  link: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  extraButtons: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      link: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ),
+  color: PropTypes.string, // Add color prop type
+};
+
+PopButton.defaultProps = {
+  extraButtons: [],
+  color: "gray", // Default color
 };
 
 export default PopButton;

@@ -1,11 +1,16 @@
 .about-section {
-  background-color: #1a202c;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
   padding: 4rem 0;
+  transition: background 0.5s ease;
 }
 
 .wave {
-  animation: wave-animation 5s;
+  animation: wave-animation 2s infinite;
   display: inline-block;
+}
+
+.wave.active {
+  animation: wave-animation 5s infinite;
 }
 
 @keyframes wave-animation {
@@ -72,4 +77,37 @@
 
 .animate-slide-in-right {
   animation: slide-in-right 1s ease;
+}
+
+h1, p {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1:hover, p:hover {
+  color: #f3f4f6;
+  transform: scale(1.05);
+}
+
+.button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.container {
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
