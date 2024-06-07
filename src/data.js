@@ -20,8 +20,17 @@ export const projects = [
     description: 
       "A versatile file conversion tool utilizing Streamlit for seamless transformation of text files into Markdown, Word, PDF, and RTF formats. Featuring LaTeX-like equation formatting and dynamic image placeholder replacement.",
     image: "DocuTransform (2).png",
-    link: "https://github.com/cconway1-stevens/chat-helper",
+    link: "https://github.com/cconway1-stevens/chat-helper"
+    
   },
+  {
+    title: "PenguinAI",
+    subtitle: "TensorFlow & AI/ML",
+    description: 
+      "A cutting-edge AI/ML project that leverages TensorFlow to classify penguin species with high accuracy. This project involves custom training loops, neural network optimization, and advanced data preprocessing techniques. Skills acquired include deep learning, model evaluation, and predictive analytics, showcasing proficiency in building and deploying sophisticated machine learning models.",
+    image: "p.png",
+    link: "https://github.com/cconway1-stevens/AI",
+  }
 ];
 
 export const tags = [
@@ -59,11 +68,11 @@ export const testimonials = [
 export const skills = [
   {
     name: "Front-end Development",
-    tags: ["HTML", "CSS", "JavaScript", "React", "Vue", "Angular"],
+    tags: ["HTML", "CSS", "JavaScript", "React", "Vue", "Angular", "Tailwind CSS"],
   },
   {
     name: "Back-end Development",
-    tags: ["Node.js", "Python", "Ruby on Rails", "PHP", "Django"],
+    tags: ["Node.js", "Python", "Ruby on Rails", "PHP", "Django", "Flask", "Firebase"],
   },
   {
     name: "Software Development",
@@ -84,6 +93,8 @@ export const skills = [
       "Git (GitHub/GitLab/SVN)",
       "Docker",
       "Kubernetes",
+      "Jenkins",
+      "CI/CD",
     ],
   },
   {
@@ -96,11 +107,14 @@ export const skills = [
       "Maintenance Requests",
       "Room Transfers",
       "Interview Facilitation",
+      "Agile",
+      "Scrum",
+      "Kanban",
     ],
   },
   {
     name: "UI/UX Design",
-    tags: ["Figma", "Consumer Interviews", "Design Presentations"],
+    tags: ["Figma", "Consumer Interviews", "Design Presentations", "Sketch", "Adobe XD"],
   },
   {
     name: "Research",
@@ -108,6 +122,8 @@ export const skills = [
       "Experimentation",
       "Data Recording & Processing",
       "Lab Instrument Calibration & Operation",
+      "Statistical Analysis",
+      "Survey Design",
     ],
   },
   {
@@ -116,6 +132,8 @@ export const skills = [
       "Material Development",
       "Feedback Provision",
       "Guest Lecture Assistance",
+      "Workshop Facilitation",
+      "Peer Tutoring",
     ],
   },
   {
@@ -124,6 +142,7 @@ export const skills = [
       "Relationship Building",
       "Counseling",
       "Diversity & Inclusion Program Development",
+      "Conflict Resolution",
     ],
   },
   {
@@ -136,21 +155,31 @@ export const skills = [
       "TensorFlow",
       "Keras",
       "PyTorch",
+      "scikit-learn",
+      "OpenCV",
+      "NLTK",
+      "Hugging Face",
+      "Transformers",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Deep Learning",
+      "Neural Networks",
     ],
   },
   {
     name: "Audio Editing",
-    tags: ["Audacity"],
+    tags: ["Audacity", "Adobe Audition"],
   },
   {
     name: "Accounting Software",
-    tags: ["QuickBooks Pro", "BookWorks"],
+    tags: ["QuickBooks Pro", "BookWorks", "Xero"],
   },
   {
     name: "Document Editing and Creation",
-    tags: ["Adobe Acrobat Suite"],
+    tags: ["Adobe Acrobat Suite", "Microsoft Word", "Google Docs"],
   },
 ];
+
 
 export const documents = [
   {
