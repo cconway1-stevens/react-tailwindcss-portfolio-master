@@ -253,7 +253,7 @@ export const jobExperiences = [
     ],
   },
   {
-    title: "Systems Researcher",
+    title: "Graduate Research Assistant for DoD",
     company: "Stevens Institute of Technology",
     location: "Hoboken, New Jersey, United States",
     startDate: "2022-12-01",
@@ -267,7 +267,7 @@ export const jobExperiences = [
     ],
   },
   {
-    title: "Graduate Research Assistant",
+    title: "Systems Researcher for NASA",
     company: "NASA",
     location: "Hoboken, New Jersey, United States",
     startDate: "2023-05-01",
