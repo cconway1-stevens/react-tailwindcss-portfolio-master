@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import PopButton from './PopButton'; // Adjust the path as needed
 import LoadingScreen from './LoadingScreen'; // Adjust the path as needed
-import { initGA, logEvent } from '../ga'; // Import the GA functions
+import { logEvent } from '../gtag'; // Import the GA functions
 
 const LOADING_DURATION = 7000; // 7 seconds
 const WAVE_DURATION = 5000; // 5 seconds
@@ -12,8 +12,7 @@ export default function About() {
   const [wave, setWave] = useState(false);
 
   useEffect(() => {
-    initGA(); // Initialize Google Analytics
-    logEvent('Page Load', 'About Page Loaded'); // Log page load event
+    logEvent('page_view', 'Page Load', 'About Page Loaded'); // Log page load event
 
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
@@ -29,12 +28,12 @@ export default function About() {
   };
 
   const handleWaveClick = () => {
-    logEvent('Interaction', 'Wave Button Clicked'); // Log wave button click event
+    logEvent('click', 'Interaction', 'Wave Button Clicked'); // Log wave button click event
     startWave();
   };
 
   const handleTestClick = () => {
-    logEvent('Test', 'Test Button Clicked'); // Log test button click event
+    logEvent('click', 'Test', 'Test Button Clicked'); // Log test button click event
   };
 
   return (
@@ -74,14 +73,14 @@ export default function About() {
                 <a
                   href="#contact"
                   className="button bg-green-500 hover:bg-green-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105"
-                  onClick={() => logEvent('Navigation', 'Contact Button Clicked')} // Log contact button click event
+                  onClick={() => logEvent('click', 'Navigation', 'Contact Button Clicked')} // Log contact button click event
                 >
                   Let's Connect ☕️
                 </a>
                 <a
                   href="https://www.linkedin.com/in/cameron-conway-07270819b/"
                   className="button bg-blue-500 hover:bg-blue-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105"
-                  onClick={() => logEvent('Navigation', 'LinkedIn Button Clicked')} // Log LinkedIn button click event
+                  onClick={() => logEvent('click', 'Navigation', 'LinkedIn Button Clicked')} // Log LinkedIn button click event
                 >
                   LinkedIn <i className="fab fa-linkedin"></i>
                 </a>
@@ -90,7 +89,7 @@ export default function About() {
                   buttonText="Resume"
                   color="gray"
                   extraButtons={[]}
-                  onClick={() => logEvent('Navigation', 'Resume Button Clicked')} // Log resume button click event
+                  onClick={() => logEvent('click', 'Navigation', 'Resume Button Clicked')} // Log resume button click event
                 />
                 <button
                   className="button bg-red-500 hover:bg-red-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105"
@@ -105,7 +104,7 @@ export default function About() {
                 className="object-cover object-center rounded-lg w-full shadow-lg"
                 alt="Coding illustration"
                 src="./coding.svg"
-                onClick={() => logEvent('Image', 'Coding Illustration Clicked')} // Log image click event
+                onClick={() => logEvent('click', 'Image', 'Coding Illustration Clicked')} // Log image click event
               />
             </div>
           </div>
