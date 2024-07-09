@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -8,14 +7,13 @@ import Skills from './components/Skills';
 import MyCal from './components/MyCal';
 import JobExperience from './components/JobExperience';
 import LoadingScreen from './components/LoadingScreen';
-import { initGA, logPageView } from './ga';
+import { logPageView } from './gtag'; // Import the GA functions
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
   useEffect(() => {
-    initGA();
     logPageView();
 
     const timer = setTimeout(() => {

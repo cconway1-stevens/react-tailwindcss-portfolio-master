@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { jobExperiences } from "../data";
 import JobExperienceReader from "./JobExperienceReader";
 import JobExperienceCard from "./JobExperienceCard";
+import { logEvent } from '../gtag'; // Import the GA functions
 
 export default function JobExperienceList() {
   const [contextMenu, setContextMenu] = useState(null);
@@ -41,12 +42,14 @@ export default function JobExperienceList() {
 
   const handleFilterChange = (e) => {
     const newFilter = e.target.value;
+    logEvent('filter', 'Job Experience', `Filter Applied: ${newFilter}`); // Log filter change event
     setFilter(newFilter);
     applyFilter(newFilter, searchTerm);
   };
 
   const handleSearchChange = (e) => {
     const newSearchTerm = e.target.value;
+    logEvent('search', 'Job Experience', `Search Term: ${newSearchTerm}`); // Log search term change event
     setSearchTerm(newSearchTerm);
     applyFilter(filter, newSearchTerm);
   };
@@ -82,10 +85,12 @@ export default function JobExperienceList() {
   });
 
   const toggleAllCardsVisibility = () => {
+    logEvent('toggle', 'Job Experience', `All Cards Visibility Toggled: ${!allCardsVisible}`); // Log toggle all cards visibility event
     setAllCardsVisible(!allCardsVisible);
   };
 
   const toggleExpandAllCards = () => {
+    logEvent('toggle', 'Job Experience', `Expand All Cards Toggled: ${!expandAllCards}`); // Log toggle expand all cards event
     setExpandAllCards(!expandAllCards);
   };
 
@@ -164,6 +169,7 @@ export default function JobExperienceList() {
         contextMenu={contextMenu}
         selectedTextRef={selectedTextRef}
         startReading={() => {
+          logEvent('contextMenu', 'Job Experience', `Reading Started: ${selectedTextRef.current}`); // Log start reading event
           const speech = new SpeechSynthesisUtterance(
             selectedTextRef.current
           );
@@ -171,6 +177,7 @@ export default function JobExperienceList() {
           handleClose();
         }}
         stopReading={() => {
+          logEvent('contextMenu', 'Job Experience', `Reading Stopped`); // Log stop reading event
           window.speechSynthesis.cancel();
           handleClose();
         }}

@@ -1,4 +1,5 @@
 import React from "react";
+import { logEvent } from '../gtag'; // Import the GA functions
 
 export default function Contact() {
   const [name, setName] = React.useState("");
@@ -20,7 +21,10 @@ export default function Contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "test", name, email, message }),
     })
-      .then(() => alert("Message sent!"))
+      .then(() => {
+        logEvent('submit', 'Contact', 'Message Sent'); // Log form submit event
+        alert("Message sent!");
+      })
       .catch((error) => alert(error));
   }
 

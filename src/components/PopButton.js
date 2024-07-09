@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import { logEvent } from '../gtag'; // Import the GA functions
 import "./PopButton.css"; // You can style the modal here
 
 const PopButton = ({ link, buttonText, extraButtons, color }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
+    logEvent('click', 'Popup', `${buttonText} Button Clicked`); // Log button click event
     setModalIsOpen(true);
   };
 
@@ -24,10 +26,7 @@ const PopButton = ({ link, buttonText, extraButtons, color }) => {
 
   return (
     <div>
-      <button
-        onClick={openModal}
-        className={buttonClass}
-      >
+      <button onClick={openModal} className={buttonClass}>
         {buttonText}
       </button>
 
@@ -62,7 +61,10 @@ const PopButton = ({ link, buttonText, extraButtons, color }) => {
                 {extraButtons.map((button) => (
                   <button
                     key={button.id}
-                    onClick={() => window.open(button.link, "_blank")}
+                    onClick={() => {
+                      logEvent('click', 'Popup', `${button.text} Extra Button Clicked`);
+                      window.open(button.link, "_blank");
+                    }}
                     className={`extra-button bg-${color}-500 hover:bg-${color}-600 text-white`}
                   >
                     {button.text}
