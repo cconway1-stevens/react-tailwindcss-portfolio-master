@@ -32,10 +32,6 @@ export default function About() {
     startWave();
   };
 
-  const handleTestClick = () => {
-    logEvent('click', 'Test', 'Test Button Clicked'); // Log test button click event
-  };
-
   return (
     <React.Fragment>
       {isLoading ? (
@@ -91,12 +87,6 @@ export default function About() {
                   extraButtons={[]}
                   onClick={() => logEvent('click', 'Navigation', 'Resume Button Clicked')} // Log resume button click event
                 />
-                <button
-                  className="button bg-red-500 hover:bg-red-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105"
-                  onClick={handleTestClick}
-                >
-                  Test Button
-                </button>
               </div>
             </div>
             <div className="md:w-1/2 animate-slide-in-right">
