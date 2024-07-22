@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
-import About from './components/About';
+import About from './components/about/About';
 import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import MyCal from './components/MyCal';
-import JobExperience from './components/JobExperience';
+import Projects from './components/projects/Projects';
+import Skills from './components/skills/Skills';
+import MyCal from './components/mycal/MyCal';
+import JobExperience from './components/experience/JobExperience';
 import { logPageView } from './gtag'; // Import the GA functions
 
 export default function App() {

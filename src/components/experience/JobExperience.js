@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { jobExperiences } from "../data";
+import { jobExperiences } from "../../data";
 import JobExperienceReader from "./JobExperienceReader";
 import JobExperienceCard from "./JobExperienceCard";
-import { logEvent } from '../gtag'; // Import the GA functions
+import { logEvent } from '../../gtag'; // Import the GA functions
 
 export default function JobExperienceList() {
   const [contextMenu, setContextMenu] = useState(null);

@@ -1,6 +1,6 @@
 import { CodeIcon } from "@heroicons/react/solid";
 import React from "react";
-import { documents } from "../data";
+import { documents } from "../../data";
 
 export default function Documents() {
   return (

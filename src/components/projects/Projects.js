@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeIcon from './CodeIcon'; // Adjust the path if needed
-import { projects } from '../data'; // Import the projects data
+import { projects } from '../../data'; // Import the projects data
 
 const ProjectCard = React.memo(({ project }) => (
   <a

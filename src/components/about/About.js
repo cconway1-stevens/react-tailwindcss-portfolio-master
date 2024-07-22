@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import PopButton from './PopButton'; // Adjust the path as needed
-import { logEvent } from '../gtag'; // Import the GA functions
+import PopButton from '../popupbutton/PopButton';
+import { logEvent } from '../../gtag'; // Import the GA functions
 
 const WAVE_DURATION = 5000; // 5 seconds
 

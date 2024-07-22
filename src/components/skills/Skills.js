@@ -1,6 +1,6 @@
 import { BadgeCheckIcon, ChipIcon } from '@heroicons/react/solid';
 import React, { useState, useCallback } from 'react';
-import { skills } from '../data'; // Ensure this path is correct
+import { skills } from '../../data'; // Ensure this path is correct
 import './Skills.css';
 
 const Skills = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { logEvent } from '../gtag'; // Import the GA functions
+import { logEvent } from '../../gtag'; // Import the GA functions
 import "./PopButton.css"; // You can style the modal here
 
 const PopButton = ({ link, buttonText, extraButtons, color }) => {
