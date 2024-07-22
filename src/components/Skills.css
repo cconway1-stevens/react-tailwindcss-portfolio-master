@@ -1,4 +1,3 @@
-/* Skills.css */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -33,10 +32,6 @@
   transform: scale(1.05);
 }
 
-.skill-card:hovered:hover {
-  transform: scale(1.05);
-}
-
 .skill-tag {
   background-color: #4a5568;
   color: #edf2f7;
@@ -52,8 +47,7 @@
 }
 
 .hover\:text-glow:hover {
-  text-shadow: 0 0 5px #38b2ac, 0 0 10px #38b2ac, 0 0 15px #38b2ac,
-    0 0 20px #38b2ac, 0 0 25px #38b2ac, 0 0 30px #38b2ac, 0 0 35px #38b2ac;
+  text-shadow: 0 0 5px #38b2ac, 0 0 10px #38b2ac, 0 0 15px #38b2ac, 0 0 20px #38b2ac, 0 0 25px #38b2ac, 0 0 30px #38b2ac, 0 0 35px #38b2ac;
 }
 
 .bg-gray-800 {
@@ -132,14 +126,4 @@
 
 .box-glow {
   box-shadow: 0 0 20px #38b2ac;
-}
-
-.skill-box-react .hovered {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-.skill-box-react:not(.hovered) {
-  transform: scale(0.95);
-  transition: transform 0.3s ease;
 }

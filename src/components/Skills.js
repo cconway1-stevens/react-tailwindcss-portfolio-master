@@ -1,17 +1,17 @@
-import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
-import React, { useState } from "react";
-import { skills } from "../data";
-import "./Skills.css";
+import { BadgeCheckIcon, ChipIcon } from '@heroicons/react/solid';
+import React, { useState, useCallback } from 'react';
+import { skills } from '../data'; // Ensure this path is correct
+import './Skills.css';
 
-export default function Skills() {
+const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(null);
 
-  const handleTagClick = (skillName) => {
+  const handleTagClick = useCallback((skillName) => {
     setActiveSkill(skillName);
     setTimeout(() => {
       setActiveSkill(null);
     }, 3000); // Timer for 3 seconds
-  };
+  }, []);
 
   return (
     <section id="skills">
@@ -22,50 +22,57 @@ export default function Skills() {
             Skills &amp; Technologies
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-400">
-            Now That's What I Call a Lot of Skills! 😎
+            Now That's What I Call a Lot of Skills!{' '}
+            <span role="img" aria-label="smiling face with sunglasses emoji">
+              😎
+            </span>
           </p>
         </div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
           {skills.map((skill) => (
-            <div
+            <SkillCard
               key={skill.name}
-              className={`p-2 sm:w-1/2 w-full skill-card ${
-                activeSkill === skill.name ? "box-glow" : ""
-              }`}
-              onMouseEnter={() =>
-                document
-                  .querySelectorAll(".skill-card")
-                  .forEach((el) => el.classList.add("hovered"))
-              }
-              onMouseLeave={() =>
-                document
-                  .querySelectorAll(".skill-card")
-                  .forEach((el) => el.classList.remove("hovered"))
-              }
-            >
-              <div className="bg-gray-800 rounded-lg flex p-4 h-full items-center transition-all transform hover:scale-105">
-                <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
-                <div>
-                  <h2 className="text-white text-lg font-medium mb-2">
-                    {skill.name}
-                  </h2>
-                  <div className="flex flex-wrap">
-                    {skill.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="skill-tag bg-gray-700 text-gray-400 mr-2 mb-2 px-2 py-1 rounded-full text-sm transition-all transform hover:scale-105 hover:text-glow"
-                        onClick={() => handleTagClick(skill.name)}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+              skill={skill}
+              activeSkill={activeSkill}
+              handleTagClick={handleTagClick}
+            />
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+const SkillCard = React.memo(({ skill, activeSkill, handleTagClick }) => (
+  <div
+    className={`p-2 sm:w-1/2 w-full skill-card ${
+      activeSkill === skill.name ? 'box-glow' : ''
+    }`}
+    onMouseEnter={() =>
+      document.querySelectorAll('.skill-card').forEach((el) => el.classList.add('hovered'))
+    }
+    onMouseLeave={() =>
+      document.querySelectorAll('.skill-card').forEach((el) => el.classList.remove('hovered'))
+    }
+  >
+    <div className="bg-gray-800 rounded-lg flex p-4 h-full items-center transition-all transform hover:scale-105">
+      <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
+      <div>
+        <h2 className="text-white text-lg font-medium mb-2">{skill.name}</h2>
+        <div className="flex flex-wrap">
+          {skill.tags.map((tag) => (
+            <span
+              key={tag}
+              className="skill-tag bg-gray-700 text-gray-400 mr-2 mb-2 px-2 py-1 rounded-full text-sm transition-all transform hover:scale-105 hover:text-glow"
+              onClick={() => handleTagClick(skill.name)}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+));
+
+export default React.memo(Skills);

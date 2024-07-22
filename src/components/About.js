@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PopButton from './PopButton'; // Adjust the path as needed
 import { logEvent } from '../gtag'; // Import the GA functions
 
 const WAVE_DURATION = 5000; // 5 seconds
 
-export default function About() {
+const About = () => {
   const [wave, setWave] = useState(false);
+
+  const startWave = useCallback(() => {
+    setWave(true);
+    setTimeout(() => setWave(false), WAVE_DURATION);
+  }, []);
 
   useEffect(() => {
     logEvent('page_view', 'Page Load', 'About Page Loaded'); // Log page load event
     startWave();
-  }, []);
-
-  const startWave = () => {
-    setWave(true);
-    setTimeout(() => setWave(false), WAVE_DURATION);
-  };
+  }, [startWave]);
 
   const handleWaveClick = () => {
     logEvent('click', 'Interaction', 'Wave Button Clicked'); // Log wave button click event
@@ -40,7 +40,7 @@ export default function About() {
                 animation: wave ? 'waveAnimation 2s ease-in-out infinite' : 'none',
               }}
             >
-              👋
+              <span role="img" aria-label="waving hand">👋</span>
             </button>
             <br className="hidden lg:inline-block" />
             Welcome to my portfolio!
@@ -57,7 +57,7 @@ export default function About() {
               className="button bg-green-500 hover:bg-green-600 rounded-lg py-2 px-6 text-lg transition-transform transform hover:scale-105"
               onClick={() => logEvent('click', 'Navigation', 'Contact Button Clicked')} // Log contact button click event
             >
-              Let's Connect ☕️
+              Let's Connect <span role="img" aria-label="coffee emoji">☕️</span>
             </a>
             <a
               href="https://www.linkedin.com/in/cameron-conway-07270819b/"
@@ -88,3 +88,4 @@ export default function About() {
   );
 }
 
+export default About;
